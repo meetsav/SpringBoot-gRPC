@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "common/address.proto";
+import "common/car.proto";
+
+import "google/protobuf/wrappers.proto";
+option java_multiple_files = true;
+option java_package = "com.meetsav.model";
+
+
+
+message Person{
+  string name = 1;
+  int32 age = 2; //this is primitive data type
+  //below is usage of wrapper types of protocol buffer
+ // google.protobuf.Int32Value age = 2;
+  // setting in java class would also differ when we use wrapper types
+  repeated common.Car car =3;
+  common.Address address =4;
+
+
+}
